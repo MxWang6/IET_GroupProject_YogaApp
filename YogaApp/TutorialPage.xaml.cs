@@ -30,5 +30,10 @@ namespace WpfApplication1
             NavigationService navService = NavigationService.GetNavigationService(this);
             navService.Navigate(new System.Uri("MainPage.xaml", UriKind.RelativeOrAbsolute));
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            webBrowser1.Navigate("https://www.youtube.com/watch?v=dTMLTCJzYGM");
+        }
     }
 }

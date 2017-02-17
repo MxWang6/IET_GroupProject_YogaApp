@@ -9,7 +9,9 @@
       Title="TutorialPage">
 
     <Grid>
-        <MediaElement Source="C:/Users/Saurabh/Desktop/WpfApplication1/WpfApplication1/Videos/hst_1.mpg" LoadedBehavior="Play" HorizontalAlignment="Left" Width="600" Height="600"/>
-            <Button x:Name="button" Content="Button" HorizontalAlignment="Right" VerticalAlignment="Center" Width="75" Click="button_Click"/>
+
+        <Button x:Name="button" Content="Go To Previous Page" HorizontalAlignment="Right" VerticalAlignment="Center" Width="75" Click="button_Click" Margin="0,325,68,0"/>
+        <WebBrowser x:Name="webBrowser1" HorizontalAlignment="Left" Height="660" VerticalAlignment="Top" Width="797"/>
+        <Button x:Name="button1" Content="Play Video" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Click="button1_Click" Margin="0,280,68,0"/>
     </Grid>
 </Page>
