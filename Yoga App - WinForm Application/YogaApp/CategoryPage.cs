@@ -12,9 +12,18 @@ namespace YogaApp
 {
     public partial class CategoryPage : Form
     {
+        TutorialPage tutorialPage;
         public CategoryPage()
         {
             InitializeComponent();
+            tutorialPage = new TutorialPage(this);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            tutorialPage.Show();
+
         }
     }
 }

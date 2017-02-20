@@ -16,7 +16,7 @@ namespace YogaApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TutorialPage());
+            Application.Run(new CategoryPage());
         }
     }
 }
