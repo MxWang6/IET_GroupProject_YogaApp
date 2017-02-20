@@ -6,7 +6,10 @@
       xmlns:local="clr-namespace:WpfApplication1"
       mc:Ignorable="d" 
       d:DesignHeight="670" d:DesignWidth="1000"
-      Title="TutorialPage">
+      Title="TutorialPage" ShowsNavigationUI="False">
+    <Page.Effect>
+        <DropShadowEffect/>
+    </Page.Effect>
     <GroupBox x:Name="groupBox1" Header="Video Section" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="650" Width="990">
         <Grid>
             <StackPanel HorizontalAlignment="Left" Width="660" Height="640">
