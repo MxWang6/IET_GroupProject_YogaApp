@@ -54,7 +54,7 @@
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(269, 318);
+            this.groupBox1.Location = new System.Drawing.Point(105, 142);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1100, 598);
             this.groupBox1.TabIndex = 1;
@@ -97,7 +97,7 @@
             this.button1.Text = "Child";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // CategoryPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -106,7 +106,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Name = "Form1";
+            this.Name = "CategoryPage";
             this.Text = "Yoga App";
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
