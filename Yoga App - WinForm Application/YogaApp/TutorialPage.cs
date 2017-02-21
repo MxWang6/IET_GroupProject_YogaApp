@@ -12,15 +12,25 @@ namespace YogaApp
 {
     public partial class TutorialPage : Form
     {
-        public TutorialPage()
+        CategoryPage categoryPage;
+        public TutorialPage(CategoryPage cP)
         {
             InitializeComponent();
+            categoryPage = cP;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             string path = "https://www.youtube.com/v/rSgIZ4wW8Fw?autoplay=1";
             axShockwaveFlash1.LoadMovie(0, path);
+        }
+      
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            categoryPage.Show();
+            
         }
     }
 }
