@@ -19,16 +19,18 @@ namespace YogaApp
             categoryPage = cP;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void playVideobutton_Click(object sender, EventArgs e)
         {
             string path = "https://www.youtube.com/v/rQaENEaAHqc?autoplay=1";
             axShockwaveFlash1.LoadMovie(0, path);
         }
       
 
-        private void button4_Click(object sender, EventArgs e)
+        private void backPreviousbutton_Click(object sender, EventArgs e)
         {
             this.Hide();
+            categoryPage.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - categoryPage.Width) / 2,
+                         (Screen.PrimaryScreen.WorkingArea.Height - categoryPage.Height) / 2);
             categoryPage.Show();
             
         }

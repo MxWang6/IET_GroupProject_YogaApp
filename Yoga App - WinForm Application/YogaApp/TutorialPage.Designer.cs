@@ -71,7 +71,7 @@
             this.button4.TabIndex = 1;
             this.button4.Text = "Go Back to Previous Page";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.backPreviousbutton_Click);
             // 
             // button3
             // 
@@ -83,7 +83,7 @@
             this.button3.TabIndex = 0;
             this.button3.Text = "Play Video";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.playVideobutton_Click);
             // 
             // TutorialPage
             // 
@@ -94,6 +94,7 @@
             this.Controls.Add(this.axShockwaveFlash1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TutorialPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Yoga App";
             ((System.ComponentModel.ISupportInitialize)(this.axShockwaveFlash1)).EndInit();
             this.groupBox1.ResumeLayout(false);

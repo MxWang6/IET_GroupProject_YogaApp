@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace YogaApp
 {
@@ -16,7 +17,10 @@ namespace YogaApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CategoryPage());
+            CategoryPage categoryPage = new CategoryPage();
+            categoryPage.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - categoryPage.Width) / 2,
+                         (Screen.PrimaryScreen.WorkingArea.Height - categoryPage.Height) / 2);
+            Application.Run(categoryPage);
         }
     }
 }
