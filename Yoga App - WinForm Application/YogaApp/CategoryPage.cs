@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace YogaApp
 {
@@ -27,6 +28,14 @@ namespace YogaApp
                           (Screen.PrimaryScreen.WorkingArea.Height - tutorialPage.Height) / 2);
             tutorialPage.Show();
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            //  categoryPage.Show();
+            //add local path to connect kinect.exe file
+            Process.Start(@"D:\projects\YogaApp-Kinect-cpp\SkeletonBasics-D2D\Debug\SkeletonBasics-D2D.exe");
         }
 
       
