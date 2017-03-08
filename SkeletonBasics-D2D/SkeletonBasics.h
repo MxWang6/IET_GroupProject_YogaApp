@@ -68,6 +68,7 @@ private:
     ID2D1SolidColorBrush*    m_pBrushJointInferred;
     ID2D1SolidColorBrush*    m_pBrushBoneTracked;
     ID2D1SolidColorBrush*    m_pBrushBoneInferred;
+	ID2D1SolidColorBrush*    m_pBrushBoneAngle;
     D2D1_POINT_2F            m_Points[NUI_SKELETON_POSITION_COUNT];
 
     // Direct2D
@@ -134,4 +135,7 @@ private:
     /// </summary>
     /// <param name="szMessage">message to display</param>
     void                    SetStatusMessage(WCHAR* szMessage);
+
+
+	void BoneAngle(const NUI_SKELETON_DATA & skel, NUI_SKELETON_POSITION_INDEX joint0, NUI_SKELETON_POSITION_INDEX joint1, float target);
 };

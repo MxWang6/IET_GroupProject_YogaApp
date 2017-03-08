@@ -8,10 +8,16 @@
 #include <strsafe.h>
 #include "SkeletonBasics.h"
 #include "resource.h"
+#include <math.h>
+#include <iostream>
 
 static const float g_JointThickness = 3.0f;
 static const float g_TrackedBoneThickness = 6.0f;
 static const float g_InferredBoneThickness = 1.0f;
+
+#define PI 3.14159265
+
+using namespace std;
 
 /// <summary>
 /// Entry point for the application
@@ -392,20 +398,32 @@ void CSkeletonBasics::DrawSkeleton(const NUI_SKELETON_DATA & skel, int windowWid
     DrawBone(skel, NUI_SKELETON_POSITION_ELBOW_LEFT, NUI_SKELETON_POSITION_WRIST_LEFT);
     DrawBone(skel, NUI_SKELETON_POSITION_WRIST_LEFT, NUI_SKELETON_POSITION_HAND_LEFT);
 
+	BoneAngle(skel, NUI_SKELETON_POSITION_SHOULDER_LEFT, NUI_SKELETON_POSITION_ELBOW_LEFT, 53.0);
+	BoneAngle(skel, NUI_SKELETON_POSITION_ELBOW_LEFT, NUI_SKELETON_POSITION_WRIST_LEFT, -50.0);
+
     // Right Arm
     DrawBone(skel, NUI_SKELETON_POSITION_SHOULDER_RIGHT, NUI_SKELETON_POSITION_ELBOW_RIGHT);
     DrawBone(skel, NUI_SKELETON_POSITION_ELBOW_RIGHT, NUI_SKELETON_POSITION_WRIST_RIGHT);
     DrawBone(skel, NUI_SKELETON_POSITION_WRIST_RIGHT, NUI_SKELETON_POSITION_HAND_RIGHT);
+
+	BoneAngle(skel, NUI_SKELETON_POSITION_SHOULDER_RIGHT, NUI_SKELETON_POSITION_ELBOW_RIGHT, -53.0);
+	BoneAngle(skel, NUI_SKELETON_POSITION_ELBOW_RIGHT, NUI_SKELETON_POSITION_WRIST_RIGHT, 50.0);
 
     // Left Leg
     DrawBone(skel, NUI_SKELETON_POSITION_HIP_LEFT, NUI_SKELETON_POSITION_KNEE_LEFT);
     DrawBone(skel, NUI_SKELETON_POSITION_KNEE_LEFT, NUI_SKELETON_POSITION_ANKLE_LEFT);
     DrawBone(skel, NUI_SKELETON_POSITION_ANKLE_LEFT, NUI_SKELETON_POSITION_FOOT_LEFT);
 
+	BoneAngle(skel, NUI_SKELETON_POSITION_HIP_LEFT, NUI_SKELETON_POSITION_KNEE_LEFT, -50.0);
+	BoneAngle(skel, NUI_SKELETON_POSITION_KNEE_LEFT, NUI_SKELETON_POSITION_ANKLE_LEFT, 50.0);
+
     // Right Leg
     DrawBone(skel, NUI_SKELETON_POSITION_HIP_RIGHT, NUI_SKELETON_POSITION_KNEE_RIGHT);
     DrawBone(skel, NUI_SKELETON_POSITION_KNEE_RIGHT, NUI_SKELETON_POSITION_ANKLE_RIGHT);
     DrawBone(skel, NUI_SKELETON_POSITION_ANKLE_RIGHT, NUI_SKELETON_POSITION_FOOT_RIGHT);
+
+	BoneAngle(skel, NUI_SKELETON_POSITION_HIP_RIGHT, NUI_SKELETON_POSITION_KNEE_RIGHT, 90.0);
+	BoneAngle(skel, NUI_SKELETON_POSITION_KNEE_RIGHT, NUI_SKELETON_POSITION_ANKLE_RIGHT, 90.0);
 
     // Draw the joints in a different color
     for (i = 0; i < NUI_SKELETON_POSITION_COUNT; ++i)
@@ -422,6 +440,37 @@ void CSkeletonBasics::DrawSkeleton(const NUI_SKELETON_DATA & skel, int windowWid
         }
     }
 }
+
+
+void CSkeletonBasics::BoneAngle(const NUI_SKELETON_DATA & skel, NUI_SKELETON_POSITION_INDEX joint0, NUI_SKELETON_POSITION_INDEX joint1, float target)
+{
+	//Check if bone is vertical
+	float angle1;
+	float angle2;
+	float angle;
+	float angleRad;
+	if(m_Points[joint0].x - m_Points[joint1].x == 0.0)	//IF THE BONE ANGLE IS VERTICAL
+	{
+		angle = 90.0;
+		 
+	}
+	else
+	{
+		angleRad = (m_Points[joint0].y - m_Points[joint1].y)/(m_Points[joint0].x - m_Points[joint1].x);
+		angle1 =atan(angleRad);
+		angle = angle1 * 57.29564553;
+	
+
+	}
+
+	float tol = 10.0;
+	if(angle<target +tol &&  angle> target-tol)
+		m_pRenderTarget->DrawLine(m_Points[joint0], m_Points[joint1], m_pBrushBoneAngle, g_TrackedBoneThickness);
+
+	 cout << "The arm angle is: "<< angle ;
+}
+
+
 
 /// <summary>
 /// Draws a bone line between two joints
@@ -518,6 +567,7 @@ HRESULT CSkeletonBasics::EnsureDirect2DResources()
         m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Yellow, 1.0f), &m_pBrushJointInferred);
         m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Green, 1.0f), &m_pBrushBoneTracked);
         m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Gray, 1.0f), &m_pBrushBoneInferred);
+		 m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Red, 1.0f), &m_pBrushBoneAngle);
     }
 
     return hr;
