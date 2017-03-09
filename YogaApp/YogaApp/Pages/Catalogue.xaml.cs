@@ -13,22 +13,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApplication1
+namespace YogaApp.Pages
 {
     /// <summary>
-    /// Interaction logic for MainPage.xaml
+    /// Interaction logic for Catalogue.xaml
     /// </summary>
-    public partial class MainPage : Page
+    public partial class Catalogue : Page
     {
-        public MainPage()
+        public Catalogue()
         {
             InitializeComponent();
         }
 
         private void navigateToTutorial()
         {
-            NavigationService navService = NavigationService.GetNavigationService(this);
-            navService.Navigate(new System.Uri("TutorialPage.xaml", UriKind.RelativeOrAbsolute));
+            Tutorial tutorial = new Tutorial();
+            NavigationService nav = NavigationService.GetNavigationService(this);
+            nav.Navigate(tutorial);
         }
 
         private void btnChild_Click(object sender, RoutedEventArgs e)
@@ -41,7 +42,7 @@ namespace WpfApplication1
             navigateToTutorial();
         }
 
-        private void btnmale_Click(object sender, RoutedEventArgs e)
+        private void btnMale_Click(object sender, RoutedEventArgs e)
         {
             navigateToTutorial();
         }
