@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +14,17 @@ namespace YogaApp
     public partial class TutorialPage : Form
     {
         CategoryPage categoryPage;
+        CategoryList categoryList;
         public TutorialPage(CategoryPage cP)
         {
             InitializeComponent();
             categoryPage = cP;
+        }
+
+        public TutorialPage(CategoryList cL)
+        {
+            InitializeComponent();
+            categoryList = cL;
         }
 
         private void playVideobutton_Click(object sender, EventArgs e)
@@ -29,10 +37,15 @@ namespace YogaApp
         private void backPreviousbutton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            categoryPage.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - categoryPage.Width) / 2,
-                         (Screen.PrimaryScreen.WorkingArea.Height - categoryPage.Height) / 2);
-            categoryPage.Show();
+            categoryList.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - categoryList.Width) / 2,
+                         (Screen.PrimaryScreen.WorkingArea.Height - categoryList.Height) / 2);
+            categoryList.Show();
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Process.Start(@"D:\projects\YogaApp-Kinect-cpp\SkeletonBasics-D2D\Debug\SkeletonBasics-D2D.exe");
         }
     }
 }

@@ -13,12 +13,10 @@ namespace YogaApp
 {
     public partial class CategoryPage : Form
     {
-        //TutorialPage tutorialPage;
         CategoryList categoryList;
         public CategoryPage()
         {
             InitializeComponent();
-            //tutorialPage = new TutorialPage(this);
             categoryList = new CategoryList(this);
         }
 
@@ -34,12 +32,20 @@ namespace YogaApp
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            //  categoryPage.Show();
-            //add local path to connect kinect.exe file
-            Process.Start(@"D:\projects\YogaApp-Kinect-cpp\SkeletonBasics-D2D\Debug\SkeletonBasics-D2D.exe");
+            categoryList.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - categoryList.Width) / 2,
+                          (Screen.PrimaryScreen.WorkingArea.Height - categoryList.Height) / 2);
+            categoryList.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            categoryList.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - categoryList.Width) / 2,
+                          (Screen.PrimaryScreen.WorkingArea.Height - categoryList.Height) / 2);
+            categoryList.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
         {
             this.Hide();
             categoryList.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - categoryList.Width) / 2,
