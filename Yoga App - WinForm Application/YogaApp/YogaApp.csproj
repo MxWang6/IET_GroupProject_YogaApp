@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoryList.Designer.cs">
+      <DependentUpon>CategoryList.cs</DependentUpon>
+    </Compile>
     <Compile Include="CategoryPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,9 @@
     <Compile Include="TutorialPage.Designer.cs">
       <DependentUpon>TutorialPage.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CategoryList.resx">
+      <DependentUpon>CategoryList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CategoryPage.resx">
       <DependentUpon>CategoryPage.cs</DependentUpon>
     </EmbeddedResource>

@@ -44,7 +44,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(800, 520);
+            this.label1.Size = new System.Drawing.Size(800, 518);
             this.label1.TabIndex = 0;
             this.label1.Text = "Yoga App";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -71,7 +71,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(160, 34);
             this.button4.TabIndex = 3;
-            this.button4.Text = "Female";
+            this.button4.Text = "Expert";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button3
@@ -81,8 +81,9 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(160, 34);
             this.button3.TabIndex = 2;
-            this.button3.Text = "Male";
+            this.button3.Text = "Advanced";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -91,7 +92,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(160, 34);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Senior";
+            this.button2.Text = "Intermediate";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -102,7 +103,7 @@
             this.childButton.Name = "childButton";
             this.childButton.Size = new System.Drawing.Size(160, 34);
             this.childButton.TabIndex = 0;
-            this.childButton.Text = "Child";
+            this.childButton.Text = "Beginner";
             this.childButton.UseVisualStyleBackColor = true;
             this.childButton.Click += new System.EventHandler(this.childButton_Click);
             // 
@@ -111,7 +112,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(800, 520);
+            this.ClientSize = new System.Drawing.Size(800, 518);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
