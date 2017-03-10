@@ -20,37 +20,33 @@ namespace YogaApp
             categoryList = new CategoryList(this);
         }
 
-        private void childButton_Click(object sender, EventArgs e)
+        private void navigateToCategoryListing()
         {
             categoryList.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - categoryList.Width) / 2,
                           (Screen.PrimaryScreen.WorkingArea.Height - categoryList.Height) / 2);
             this.Hide();
             categoryList.Show();
+        }
+
+        private void childButton_Click(object sender, EventArgs e)
+        {
+            navigateToCategoryListing();
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            categoryList.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - categoryList.Width) / 2,
-                          (Screen.PrimaryScreen.WorkingArea.Height - categoryList.Height) / 2);
-            categoryList.Show();
+            navigateToCategoryListing();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            categoryList.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - categoryList.Width) / 2,
-                          (Screen.PrimaryScreen.WorkingArea.Height - categoryList.Height) / 2);
-            categoryList.Show();
+            navigateToCategoryListing();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            categoryList.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - categoryList.Width) / 2,
-                          (Screen.PrimaryScreen.WorkingArea.Height - categoryList.Height) / 2);
-            categoryList.Show();
+            navigateToCategoryListing();
         }
     }
 }

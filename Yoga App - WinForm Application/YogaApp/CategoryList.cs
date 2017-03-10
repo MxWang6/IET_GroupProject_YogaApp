@@ -18,28 +18,34 @@ namespace YogaApp
         public CategoryList(CategoryPage cP)
         {
             InitializeComponent();
-            tutorialPage = new TutorialPage(this);
             categoryPage = cP;
+            tutorialPage = new TutorialPage(this);
         }
-        public CategoryList()
+
+        private void navigateToTutorialPage()
         {
-            InitializeComponent();
+            tutorialPage.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - tutorialPage.Width) / 2,
+                          (Screen.PrimaryScreen.WorkingArea.Height - tutorialPage.Height) / 2);
+            this.Hide();
+            tutorialPage.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            tutorialPage.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - tutorialPage.Width) / 2,
-                          (Screen.PrimaryScreen.WorkingArea.Height - tutorialPage.Height) / 2);
-            this.Hide();
-            tutorialPage.Show();
+            navigateToTutorialPage();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            tutorialPage.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - tutorialPage.Width) / 2,
-                          (Screen.PrimaryScreen.WorkingArea.Height - tutorialPage.Height) / 2);
+            navigateToTutorialPage();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            categoryPage.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - categoryPage.Width) / 2,
+                          (Screen.PrimaryScreen.WorkingArea.Height - categoryPage.Height) / 2);
             this.Hide();
-            tutorialPage.Show();
+            categoryPage.Show();
         }
     }
 }
