@@ -22,9 +22,9 @@ namespace YogaApp
 
         private void navigateToCategoryListing()
         {
+            this.Hide();
             categoryList.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - categoryList.Width) / 2,
                           (Screen.PrimaryScreen.WorkingArea.Height - categoryList.Height) / 2);
-            this.Hide();
             categoryList.Show();
         }
 
@@ -48,5 +48,7 @@ namespace YogaApp
         {
             navigateToCategoryListing();
         }
+
+      
     }
 }

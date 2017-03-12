@@ -24,9 +24,9 @@ namespace YogaApp
 
         private void navigateToTutorialPage()
         {
+            this.Hide();
             tutorialPage.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - tutorialPage.Width) / 2,
                           (Screen.PrimaryScreen.WorkingArea.Height - tutorialPage.Height) / 2);
-            this.Hide();
             tutorialPage.Show();
         }
 
@@ -46,6 +46,11 @@ namespace YogaApp
                           (Screen.PrimaryScreen.WorkingArea.Height - categoryPage.Height) / 2);
             this.Hide();
             categoryPage.Show();
+        }
+
+        private void CategoryList_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

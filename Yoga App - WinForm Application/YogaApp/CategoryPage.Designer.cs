@@ -99,11 +99,12 @@
             // 
             // childButton
             // 
+            this.childButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.childButton.Location = new System.Drawing.Point(180, 60);
-            this.childButton.Margin = new System.Windows.Forms.Padding(2);
+            this.childButton.Margin = new System.Windows.Forms.Padding(0);
             this.childButton.Name = "childButton";
             this.childButton.Size = new System.Drawing.Size(160, 34);
-            this.childButton.TabIndex = 0;
+            this.childButton.TabIndex = 4;
             this.childButton.Text = "Beginner";
             this.childButton.UseVisualStyleBackColor = true;
             this.childButton.Click += new System.EventHandler(this.childButton_Click);
