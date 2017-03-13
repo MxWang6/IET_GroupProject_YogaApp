@@ -28,10 +28,5 @@ namespace YogaApp
             MainFrame.Source = new Uri("Pages/Home.xaml", UriKind.Relative);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //MainFrame.Navigate(new Uri("Pages/Home.xaml", UriKind.Relative));
-            //this.Content = new Home();
-        }
     }
 }

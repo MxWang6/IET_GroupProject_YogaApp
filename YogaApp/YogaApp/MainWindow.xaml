@@ -12,6 +12,20 @@
         ShowIconOnTitleBar="True"
         Title="Yoga" Height="350" Width="525"
         GlowBrush="{DynamicResource AccentColorBrush}">
+    
+    <Controls:MetroWindow.Flyouts>
+        <Controls:FlyoutsControl>
+            <Controls:Flyout Position="Top" x:Name="yourMahAppFlyout"/>
+        </Controls:FlyoutsControl>
+    </Controls:MetroWindow.Flyouts>
+
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <ToggleButton Content="Layers" 
+        IsChecked="{Binding ElementName=yourMahAppFlyout, Path=IsOpen}" Cursor="Hand"/>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
+    
     <Grid>
         <!--<iconPacks:PackIconModern Kind="Baby"></iconPacks:PackIconModern>-->
         <Frame Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>

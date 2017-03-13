@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace YogaApp.Pages
 {
@@ -32,9 +34,24 @@ namespace YogaApp.Pages
             nav.Navigate(catalogue);
         }
 
-        private void Exit_Click(object sender, RoutedEventArgs e)
+        private async void Exit_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            var window = TreeHelper.TryFindParent<MainWindow>(this);
+            var mySettings = new MetroDialogSettings()
+            {
+                AffirmativeButtonText = "Quit",
+                NegativeButtonText = "Cancel",
+                AnimateShow = true,
+                AnimateHide = true
+            };
+
+            var result = await DialogManager.ShowMessageAsync(window, "Quit application?",
+                "Sure you want to quit application?", MessageDialogStyle.AffirmativeAndNegative, mySettings);
+            var shutdown = result == MessageDialogResult.Affirmative;
+            if (shutdown)
+            {
+                Application.Current.Shutdown();
+            }
         }
     }
 }
