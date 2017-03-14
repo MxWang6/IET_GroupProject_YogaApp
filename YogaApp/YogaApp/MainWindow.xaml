@@ -36,5 +36,11 @@
     <Grid>
         <!--<iconPacks:PackIconModern Kind="Baby"></iconPacks:PackIconModern>-->
         <Frame Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>
+        <Controls:HamburgerMenu x:Name="HamburgerMenuControl"
+                        Foreground="White"
+                        PaneBackground="#FF444444"
+                        IsPaneOpen="False"
+                        DisplayMode="CompactInline">
+        </Controls:HamburgerMenu>
     </Grid>
 </Controls:MetroWindow>
