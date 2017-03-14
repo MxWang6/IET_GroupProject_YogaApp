@@ -4,12 +4,31 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:YogaApp.Pages"
+      xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
       Title="Tutorial">
 
     <Grid>
-        <Button Content="test" Width="60" Height="30" Click="Button_Click"></Button>
+        <!--<Button Content="test" Width="60" Height="30" Click="Button_Click"></Button>-->
         <!--<Frame Name="TutorialFrame" NavigationUIVisibility="Hidden"></Frame>-->
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+
+        </Grid.RowDefinitions>
+        
+        <controls:Tile Title="Child" TiltFactor="2" Width="100" Height="100" Grid.Column="0" Grid.Row="0"></controls:Tile>
+        <controls:Tile Title="Senior" TiltFactor="2" Width="100" Height="100" Grid.Column="1" Grid.Row="0"></controls:Tile>
+        <controls:Tile Title="Male" TiltFactor="2" Width="100" Height="100" Grid.Column="0" Grid.Row="1"></controls:Tile>
+        <controls:Tile Title="Female" TiltFactor="2" Width="100" Height="100" Grid.Column="1" Grid.Row="1"></controls:Tile>
+
     </Grid>
 </Page>

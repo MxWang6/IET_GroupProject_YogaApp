@@ -4,13 +4,14 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:YogaApp.Pages"
-      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
       Title="Home">
 
     <Grid>
-        <Button Name="Start" Controls:ControlsHelper.ContentCharacterCasing="Normal" Content="Start" Style="{DynamicResource AccentedSquareButtonStyle}" Width="60" Height="30" Margin="120,112,120,158" Click="Start_Click"></Button>
-        <Button Name="Quit" Controls:ControlsHelper.ContentCharacterCasing="Normal" Content="Quit" Style="{DynamicResource AccentedSquareButtonStyle}" Width="60" Height="30" Margin="120,157,120,113" Click="Exit_Click"></Button>
+        <Button Name="Start" controls:ControlsHelper.ContentCharacterCasing="Normal" Content="Start" Style="{DynamicResource AccentedSquareButtonStyle}" Width="60" Height="30" Margin="120,112,120,158" Click="Start_Click"></Button>
+        <Button Name="Quit" controls:ControlsHelper.ContentCharacterCasing="Normal" Content="Quit" Style="{DynamicResource AccentedSquareButtonStyle}" Width="60" Height="30" Margin="120,157,120,113" Click="Exit_Click"></Button>
     </Grid>
 </Page>
