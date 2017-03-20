@@ -1,0 +1,49 @@
+﻿<Page x:Class="YogaApp.Views.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+      xmlns:local="clr-namespace:YogaApp.Views"
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      Foreground="{DynamicResource TextBrush}"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" 
+      d:DesignWidth="425"
+      Title="MainPage">
+
+    <Grid Background="{DynamicResource AccentColorBrush4}">
+        <!--<TextBlock Text="Welcome"
+                   Margin="24"
+                   FontSize="48"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Left"></TextBlock>-->
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <WrapPanel Grid.Row="0" Grid.Column="0" Width="312" VerticalAlignment="Center">
+            <controls:Tile Title="Beginner" TiltFactor="2" Width="150" Height="100" Click="Beginner_Click">
+                <iconPacks:PackIconModern Kind="Foot" VerticalAlignment="Center" HorizontalAlignment="Center" Width="60" Height="48"/>
+            </controls:Tile>
+            <controls:Tile Title="Intermediate" TiltFactor="2" Width="150" Height="100" Click="Intermediate_Click">
+                <iconPacks:PackIconModern Kind="SocialAim" VerticalAlignment="Center" HorizontalAlignment="Center" Width="60" Height="48"/>
+            </controls:Tile>
+            <controls:Tile Title="Advanced" TiltFactor="2" Width="150" Height="100" Click="Advanced_Click">
+                <iconPacks:PackIconModern Kind="StairsUpReflectHorizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Width="60" Height="48" />
+            </controls:Tile>
+            <controls:Tile Title="Expert" TiltFactor="2" Width="150" Height="100" Click="Expert_Click">
+                <iconPacks:PackIconModern Kind="Radioactive" VerticalAlignment="Center" HorizontalAlignment="Center" Width="60" Height="48"/>
+            </controls:Tile>
+        </WrapPanel>
+
+    </Grid>
+
+
+
+</Page>
