@@ -73,6 +73,7 @@
     <Compile Include="Pages\TutorialPage.Designer.cs">
       <DependentUpon>TutorialPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\CsvWriter.cs" />
     <Compile Include="Utils\ExcelReader.cs" />
     <EmbeddedResource Include="Pages\CategoryList.resx">
       <DependentUpon>CategoryList.cs</DependentUpon>
@@ -94,6 +95,7 @@
       <DependentUpon>TutorialPage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Files\PoseData.xlsx" />
+    <None Include="Files\PoseSelected.csv" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
