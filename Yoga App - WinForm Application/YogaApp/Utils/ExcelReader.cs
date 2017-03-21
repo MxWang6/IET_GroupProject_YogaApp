@@ -4,14 +4,14 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace YogaApp.Utils
 {
-    class CsvReader
+    class ExcelReader
     {
         public static void getExcelFile()
         {
-
+            string exeDir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
             //Create COM Objects. Create a COM object for everything that is referenced
             Excel.Application xlApp = new Excel.Application();
-            Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(@"D:\PoseData.xlsx");
+            Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(System.IO.Path.Combine(exeDir, "PoseData.xlsx"));
             Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
             Excel.Range xlRange = xlWorksheet.UsedRange;
 
@@ -22,16 +22,8 @@ namespace YogaApp.Utils
             //excel is not zero based!!
             for (int i = 1; i <= rowCount; i++)
             {
-                for (int j = 2; j <= colCount; j++)
-                {
-                    //new line
-                    if (j == 1)
-                        Console.Write("\r\n");
-
-                    //write the value to the console
-                    if (xlRange.Cells[i, j] != null && xlRange.Cells[i, j].Value2 != null)
-                        Console.Write(xlRange.Cells[i, j].Value2.ToString() + "\t");
-                }
+                if (xlRange.Cells[i, 1] != null && xlRange.Cells[i, 1].Value2 != null && xlRange.Cells[i, 1].Value2.ToString() == "age")
+                    Console.Write(xlRange.Cells[i, 2].Value2.ToString() + "\t");
             }
 
             //cleanup

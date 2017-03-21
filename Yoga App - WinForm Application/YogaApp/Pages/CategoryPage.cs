@@ -12,7 +12,7 @@ namespace YogaApp
         {
             InitializeComponent();
             categoryList = new CategoryList(this);
-            CsvReader.getExcelFile();
+            ExcelReader.getExcelFile();
         }
 
         private void navigateToCategoryListing()
