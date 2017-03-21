@@ -12,7 +12,7 @@ namespace YogaApp
         {
             InitializeComponent();
             categoryList = new CategoryList(this);
-            ExcelReader.getExcelFile();
+            Console.WriteLine(ExcelReader.getExcelFile("PoseData.xlsx", "age"));
         }
 
         private void navigateToCategoryListing()

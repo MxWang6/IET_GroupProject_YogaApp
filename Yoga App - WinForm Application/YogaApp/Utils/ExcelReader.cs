@@ -6,12 +6,12 @@ namespace YogaApp.Utils
 {
     class ExcelReader
     {
-        public static void getExcelFile()
+        public static string getExcelFile(string filename, string fieldname)
         {
-            string exeDir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            string txt = "", exeDir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
             //Create COM Objects. Create a COM object for everything that is referenced
             Excel.Application xlApp = new Excel.Application();
-            Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(System.IO.Path.Combine(exeDir, "PoseData.xlsx"));
+            Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(System.IO.Path.Combine(exeDir, filename));
             Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
             Excel.Range xlRange = xlWorksheet.UsedRange;
 
@@ -22,8 +22,9 @@ namespace YogaApp.Utils
             //excel is not zero based!!
             for (int i = 1; i <= rowCount; i++)
             {
-                if (xlRange.Cells[i, 1] != null && xlRange.Cells[i, 1].Value2 != null && xlRange.Cells[i, 1].Value2.ToString() == "age")
-                    Console.Write(xlRange.Cells[i, 2].Value2.ToString() + "\t");
+                if (xlRange.Cells[i, 1] != null && xlRange.Cells[i, 1].Value2 != null
+                    && xlRange.Cells[i, 1].Value2.ToString() == fieldname)
+                    txt = xlRange.Cells[i, 2].Value2.ToString();
             }
 
             //cleanup
@@ -45,6 +46,8 @@ namespace YogaApp.Utils
             //quit and release
             xlApp.Quit();
             Marshal.ReleaseComObject(xlApp);
+
+            return txt;
         }
     }
 }
