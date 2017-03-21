@@ -1,22 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 
 namespace YogaApp.Utils
 {
     class CsvWriter
     {
-        public static void addPoseNameToCsv()
+        public static void addPoseNameToCsv(string poseName)
         {
             string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             path += "\\Files\\PoseSelected.csv";
-            List<String> lines = new List<String>();
 
             if (File.Exists(path))
             {
                 using (StreamWriter writer = new StreamWriter(path, false))
                 {
-                    writer.WriteLine("pathak");
+                    writer.WriteLine(poseName);
                 }
             }
         }
