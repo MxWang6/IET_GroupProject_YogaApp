@@ -29,27 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TutorialPage));
-            this.axShockwaveFlash1 = new AxShockwaveFlashObjects.AxShockwaveFlash();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.axShockwaveFlash1)).BeginInit();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // axShockwaveFlash1
-            // 
-            this.axShockwaveFlash1.Enabled = true;
-            this.axShockwaveFlash1.Location = new System.Drawing.Point(0, 0);
-            this.axShockwaveFlash1.Margin = new System.Windows.Forms.Padding(0);
-            this.axShockwaveFlash1.Name = "axShockwaveFlash1";
-            this.axShockwaveFlash1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axShockwaveFlash1.OcxState")));
-            this.axShockwaveFlash1.Padding = new System.Windows.Forms.Padding(2);
-            this.axShockwaveFlash1.Size = new System.Drawing.Size(536, 524);
-            this.axShockwaveFlash1.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -67,6 +56,29 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Controls";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(1, 201);
+            this.label1.Margin = new System.Windows.Forms.Padding(4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Introduction";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(4, 225);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(248, 279);
+            this.richTextBox1.TabIndex = 3;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // button1
             // 
@@ -102,55 +114,42 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.playVideobutton_Click);
             // 
-            // richTextBox1
+            // axWindowsMediaPlayer1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(4, 225);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(248, 279);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(1, 201);
-            this.label1.Margin = new System.Windows.Forms.Padding(4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 17);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Introduction";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(3, 6);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(531, 504);
+            this.axWindowsMediaPlayer1.TabIndex = 4;
             // 
             // TutorialPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 522);
+            this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.axShockwaveFlash1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TutorialPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Yoga App";
-            ((System.ComponentModel.ISupportInitialize)(this.axShockwaveFlash1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private AxShockwaveFlashObjects.AxShockwaveFlash axShockwaveFlash1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label1;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+       
     }
 }

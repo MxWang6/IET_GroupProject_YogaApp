@@ -16,6 +16,8 @@ namespace YogaApp
     {
         CategoryPage categoryPage;
         CategoryList categoryList;
+       
+
         public TutorialPage(CategoryPage cP)
         {
             InitializeComponent();
@@ -30,8 +32,12 @@ namespace YogaApp
 
         private void playVideobutton_Click(object sender, EventArgs e)
         {
-            string path = "https://www.youtube.com/v/rQaENEaAHqc?autoplay=1";
-            axShockwaveFlash1.LoadMovie(0, path);
+            //  string path = "https://www.youtube.com/v/rQaENEaAHqc?autoplay=1";
+            //axShockwaveFlash1.LoadMovie(0, path);
+
+            string path = "D:\\Project\\YogaVideos\\TreePose.mp4";
+            axWindowsMediaPlayer1.URL = @path;
+           
         }
       
 
@@ -52,7 +58,7 @@ namespace YogaApp
         private void tryPoseButton_Click(object sender, EventArgs e)
         {
             string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-            path += "\\..\\..\\YogaApp-Kinect-cpp\\SkeletonBasics-D2D\\Debug\\SkeletonBasics-D2D.exe";
+              path = "\\..\\..\\YogaApp-Kinect-cpp\\SkeletonBasics-D2D\\Debug\\SkeletonBasics-D2D.exe";
             Process.Start(path);
         }
 

@@ -116,6 +116,14 @@
       <WrapperTool>aximp</WrapperTool>
       <Isolated>False</Isolated>
     </COMReference>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
     <COMReference Include="Microsoft.Office.Core">
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
       <VersionMajor>2</VersionMajor>
@@ -149,6 +157,15 @@
       <VersionMinor>3</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>

@@ -28,6 +28,7 @@ namespace YogaApp
             tutorialPage.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - tutorialPage.Width) / 2,
                           (Screen.PrimaryScreen.WorkingArea.Height - tutorialPage.Height) / 2);
             tutorialPage.Show();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
