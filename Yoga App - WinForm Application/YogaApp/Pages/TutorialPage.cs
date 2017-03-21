@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace YogaApp
 {
@@ -40,12 +41,19 @@ namespace YogaApp
             categoryList.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - categoryList.Width) / 2,
                          (Screen.PrimaryScreen.WorkingArea.Height - categoryList.Height) / 2);
             categoryList.Show();
-            
+            Console.WriteLine("hello");
+            foreach (var process in Process.GetProcessesByName("SkeletonBasics-D2D"))
+            {
+                Console.WriteLine(process.ToString());
+                process.Kill();
+            }
         }
 
         private void tryPoseButton_Click(object sender, EventArgs e)
         {
-            Process.Start(@"D:\projects\YogaApp-Kinect-cpp\SkeletonBasics-D2D\Debug\SkeletonBasics-D2D.exe");
+            string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            path += "\\..\\..\\YogaApp-Kinect-cpp\\SkeletonBasics-D2D\\Debug\\SkeletonBasics-D2D.exe";
+            Process.Start(path);
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
