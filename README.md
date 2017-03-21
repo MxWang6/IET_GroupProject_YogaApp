@@ -8,9 +8,3 @@ CS7038: IET Group Project
 5. We usually working in dev branch, so make sure you working in the properly branch. Remenber switch the branch from master to dev in your local computer.
 6. The master branch usually for merging the stable feature from the dev branch, when you merge some new feature from dev branch to master branch, please be careful.
 7. When you ready for to let us know you finished your part of task, you could send a PULL REQUEST which is on the webpage of project repository on your repository list. Make sure you make the right pull request, master branch pull request would not be accepted.
-
-Notice:
-Next week, we would find a time to learning some git skill together.
-
-test edo
-test pra
