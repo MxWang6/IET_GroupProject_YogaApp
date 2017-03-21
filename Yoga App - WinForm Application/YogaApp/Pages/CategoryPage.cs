@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Diagnostics;
+using YogaApp.Utils;
 
 namespace YogaApp
 {
@@ -18,6 +12,7 @@ namespace YogaApp
         {
             InitializeComponent();
             categoryList = new CategoryList(this);
+            CsvReader.getExcelFile();
         }
 
         private void navigateToCategoryListing()
