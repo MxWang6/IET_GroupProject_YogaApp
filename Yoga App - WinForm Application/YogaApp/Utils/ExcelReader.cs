@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.IO;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace YogaApp.Utils
@@ -8,10 +9,10 @@ namespace YogaApp.Utils
     {
         public static string getExcelFile(string filename, string fieldname)
         {
-            string txt = "", exeDir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            string txt = "", parentDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             //Create COM Objects. Create a COM object for everything that is referenced
             Excel.Application xlApp = new Excel.Application();
-            Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(System.IO.Path.Combine(exeDir, filename));
+            Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(System.IO.Path.Combine(parentDir + "\\Files\\", filename));
             Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
             Excel.Range xlRange = xlWorksheet.UsedRange;
 
