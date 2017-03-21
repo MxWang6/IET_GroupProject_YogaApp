@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace YogaApp
 {
@@ -45,7 +46,9 @@ namespace YogaApp
 
         private void tryPoseButton_Click(object sender, EventArgs e)
         {
-            Process.Start(@"D:\projects\YogaApp-Kinect-cpp\SkeletonBasics-D2D\Debug\SkeletonBasics-D2D.exe");
+            string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            path += "\\..\\..\\YogaApp-Kinect-cpp\\SkeletonBasics-D2D\\Debug\\SkeletonBasics-D2D.exe";
+            Process.Start(path);
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
