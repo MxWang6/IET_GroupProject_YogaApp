@@ -41,7 +41,12 @@ namespace YogaApp
             categoryList.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - categoryList.Width) / 2,
                          (Screen.PrimaryScreen.WorkingArea.Height - categoryList.Height) / 2);
             categoryList.Show();
-            
+            Console.WriteLine("hello");
+            foreach (var process in Process.GetProcessesByName("SkeletonBasics-D2D"))
+            {
+                Console.WriteLine(process.ToString());
+                process.Kill();
+            }
         }
 
         private void tryPoseButton_Click(object sender, EventArgs e)
