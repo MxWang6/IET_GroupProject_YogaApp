@@ -81,10 +81,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 522);
+            this.ClientSize = new System.Drawing.Size(800, 518);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "CategoryList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Yoga App";
+            this.Load += new System.EventHandler(this.CategoryList_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
