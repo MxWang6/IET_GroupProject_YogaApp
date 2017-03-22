@@ -29,8 +29,10 @@ namespace YogaApp
             //  string path = "https://www.youtube.com/v/rQaENEaAHqc?autoplay=1";
             //axShockwaveFlash1.LoadMovie(0, path);
 
-            string path = "D:\\Project\\YogaVideos\\TreePose.mp4";
-            axWindowsMediaPlayer1.URL = @path;
+            string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            path += "\\Videos\\TreePose.mp4";
+            axWindowsMediaPlayer1.URL = path;
+        //    axWindowsMediaPlayer1.Show("");
 
         }
 
@@ -41,6 +43,7 @@ namespace YogaApp
             categoryList.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - categoryList.Width) / 2,
                          (Screen.PrimaryScreen.WorkingArea.Height - categoryList.Height) / 2);
             categoryList.Show();
+            axWindowsMediaPlayer1.close();
             foreach (var process in Process.GetProcessesByName("SkeletonBasics-D2D"))
             {
                 Console.WriteLine(process.ToString());
@@ -51,8 +54,18 @@ namespace YogaApp
         private void tryPoseButton_Click(object sender, EventArgs e)
         {
             string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-            path += "\\..\\..\\YogaApp-Kinect-cpp\\SkeletonBasics-D2D\\Debug\\SkeletonBasics-D2D.exe";
+            path = "\\..\\..\\YogaApp-Kinect-cpp\\SkeletonBasics-D2D\\Debug\\SkeletonBasics-D2D.exe";
             Process.Start(path);
+        }
+
+        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -123,18 +123,6 @@
   <metadata name="richTextBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="button1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="button4.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="button3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="richTextBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="richTextBox1.Text" xml:space="preserve">
     <value>Tree Pose or Vrksasana
 
@@ -178,12 +166,11 @@ Things to keep in Mind:
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA/QAAAAIB
-        AAAAAQAAAAAAAAAAAAAAAOgAAAAAAwAACABGAAAARAA6AFwAUAByAG8AagBlAGMAdABcAFkAbwBnAGEA
-        VgBpAGQAZQBvAHMAXABUAHIAZQBlAFAAbwBzAGUALgBtAHAANAAAAAUAAAAAAAAA8D8DAAAAAAAFAAAA
-        AAAAAAAACAACAAAAAAADAAEAAAALAP//AwAAAAAACwD//wgAAgAAAAAAAwAyAAAACwAAAAgACgAAAGYA
-        dQBsAGwAAAALAAAACwAAAAsA//8LAP//CwAAAAgAAgAAAAAACAACAAAAAAAIAAIAAAAAAAgAAgAAAAAA
-        CwAAAOE2AAAXNAAACw==
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAtwAAAAIB
+        AAAAAQAAAAAAAAAAAAAAAKIAAAAAAwAACAAAAAAABQAAAAAAAADwPwMAAAAAAAUAAAAAAAAAAAAIAAIA
+        AAAAAAMAAQAAAAsA//8DAAAAAAALAP//CAACAAAAAAADADIAAAALAAAACAAKAAAAZgB1AGwAbAAAAAsA
+        AAALAAAACwD//wsA//8LAAAACAACAAAAAAAIAAIAAAAAAAgAAgAAAAAACAACAAAAAAALAAAAwAcAAGEC
+        AAAL
 </value>
   </data>
 </root>

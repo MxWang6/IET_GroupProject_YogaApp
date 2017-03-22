@@ -77,6 +77,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(248, 279);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // button1
             // 
@@ -114,23 +115,13 @@
             // 
             // axWindowsMediaPlayer1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(4, 225);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(248, 279);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(1, 201);
-            this.label1.Margin = new System.Windows.Forms.Padding(4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 17);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Introduction";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 6);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(534, 510);
+            this.axWindowsMediaPlayer1.TabIndex = 0;
+            this.axWindowsMediaPlayer1.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
             // 
             // TutorialPage
             // 
@@ -159,6 +150,5 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label1;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
-       
     }
 }
