@@ -2,17 +2,33 @@
 using System.Drawing;
 using System.Windows.Forms;
 
+
 namespace YogaApp
 {
     public partial class CategoryList : Form
     {
         TutorialPage tutorialPage;
         CategoryPage categoryPage;
+
+        private static Button exchangeButton;
+        
+
+        public Button getName()
+        {
+            return exchangeButton;
+        } 
+
+        public void setName(string name)
+        {
+            exchangeButton.Name = name;
+        }
+
         public CategoryList(CategoryPage cP)
         {
             InitializeComponent();
             categoryPage = cP;
             tutorialPage = new TutorialPage(this);
+            exchangeButton = new Button();
         }
 
         private void navigateToTutorialPage()
@@ -24,9 +40,15 @@ namespace YogaApp
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonTree_Click(object sender, EventArgs e)
         {
             navigateToTutorialPage();
+            var button = (Button)sender;
+            String Name = button.Name;
+            setName(Name);
+                       
+            Console.WriteLine(getName()); 
+
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -3,6 +3,8 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
+using YogaApp.Utils;
+
 
 namespace YogaApp
 {
@@ -10,29 +12,42 @@ namespace YogaApp
     {
         CategoryPage categoryPage;
         CategoryList categoryList;
+        public string exchangeName = null;
+        public string videoPath = null;
+        public string videoDescription = null;
 
 
         public TutorialPage(CategoryPage cP)
         {
             InitializeComponent();
             categoryPage = cP;
+         
         }
 
         public TutorialPage(CategoryList cL)
         {
             InitializeComponent();
             categoryList = cL;
+     
         }
 
         private void playVideobutton_Click(object sender, EventArgs e)
         {
-            //  string path = "https://www.youtube.com/v/rQaENEaAHqc?autoplay=1";
-            //axShockwaveFlash1.LoadMovie(0, path);
-
+         
+            // add video local path
+            exchangeName = categoryList.getName().Name;
+            if (exchangeName == "TreePose")
+            {
+                Console.WriteLine(ExcelReader.getExcelFile("PoseData.xlsx", "TreePoseVideoPath"));
+                videoPath = ExcelReader.getExcelFile("PoseData.xlsx", "TreePoseVideoPath");
+                videoDescription = ExcelReader.getExcelFile("PoseData.xlsx", "TreePoseVideoDescription");
+            }
             string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-            path += "\\Videos\\TreePose.mp4";
+            path += videoPath;
             axWindowsMediaPlayer1.URL = path;
-        //    axWindowsMediaPlayer1.Show("");
+            richTextBox1.Text = videoDescription;
+
+            // add other post here
 
         }
 
@@ -65,7 +80,13 @@ namespace YogaApp
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-
+            exchangeName = categoryList.getName().Name;
+            if (exchangeName == "TreePose")
+            {
+                Console.WriteLine(ExcelReader.getExcelFile("PoseData.xlsx", "TreePoseVideoDescription"));
+                videoDescription = ExcelReader.getExcelFile("PoseData.xlsx", "TreePoseVideoDescription");
+            }
+             richTextBox1.Text = videoDescription;
         }
     }
 }
