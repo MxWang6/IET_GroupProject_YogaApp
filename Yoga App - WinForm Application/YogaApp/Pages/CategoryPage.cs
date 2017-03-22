@@ -13,6 +13,7 @@ namespace YogaApp
             InitializeComponent();
             categoryList = new CategoryList(this);
             Console.WriteLine(ExcelReader.getExcelFile("PoseData.xlsx", "surname"));
+            CsvWriter.addPoseNameToCsv("Tree Pose");
         }
 
         private void navigateToCategoryListing()
@@ -44,6 +45,6 @@ namespace YogaApp
             navigateToCategoryListing();
         }
 
-      
+
     }
 }
