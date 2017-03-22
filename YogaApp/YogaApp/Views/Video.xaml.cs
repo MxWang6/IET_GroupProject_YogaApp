@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace YogaApp.Views
 {
     /// <summary>
-    /// Interaction logic for Beginner.xaml
+    /// Interaction logic for Video.xaml
     /// </summary>
-    public partial class Beginner : Page
+    public partial class Video : Page
     {
-        public Beginner()
+        public Video()
         {
             InitializeComponent();
-        }
-
-        private void Tile1_OnClick(object sender, RoutedEventArgs e)
-        {
-            Navigation.Navigation.Navigate(new Uri("Views/Video.xaml", UriKind.RelativeOrAbsolute));
-        }
-
-        private void Tile2_OnClick(object sender, RoutedEventArgs e)
-        {
-            Navigation.Navigation.Navigate(new Uri("Views/Video.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }
