@@ -31,7 +31,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.TreePose = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,7 +39,7 @@
             // 
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.TreePose);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(760, 498);
@@ -67,15 +67,15 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // TreePose
             // 
-            this.button1.Location = new System.Drawing.Point(273, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 34);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Vriksha Aasan";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.TreePose.Location = new System.Drawing.Point(273, 19);
+            this.TreePose.Name = "TreePose";
+            this.TreePose.Size = new System.Drawing.Size(160, 34);
+            this.TreePose.TabIndex = 0;
+            this.TreePose.Text = "Tree Pose";
+            this.TreePose.UseVisualStyleBackColor = true;
+            this.TreePose.Click += new System.EventHandler(this.buttonTree_Click);
             // 
             // CategoryList
             // 
@@ -97,7 +97,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
+        public System.Windows.Forms.Button TreePose;
     }
 }

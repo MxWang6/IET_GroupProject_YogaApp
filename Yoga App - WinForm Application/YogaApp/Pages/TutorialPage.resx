@@ -117,43 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="axShockwaveFlash1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="groupBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="axShockwaveFlash1.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
-        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA+QEAAAIB
-        AAAAAQAAAAAAAAAAAAAAAOQBAABnVWZVAA4AAGY3AAAoNgAACAACAAAAAAAIAEwAAABoAHQAdABwAHMA
-        OgAvAC8AdwB3AHcALgB5AG8AdQB0AHUAYgBlAC4AYwBvAG0ALwB2AC8AcgBTAGcASQBaADQAdwBXADgA
-        RgB3AAAACABMAAAAaAB0AHQAcABzADoALwAvAHcAdwB3AC4AeQBvAHUAdAB1AGIAZQAuAGMAbwBtAC8A
-        dgAvAHIAUwBnAEkAWgA0AHcAVwA4AEYAdwAAAAgADgAAAFcAaQBuAGQAbwB3AAAACAAGAAAALQAxAAAA
-        CAAGAAAALQAxAAAACAAKAAAASABpAGcAaAAAAAgABgAAAEwAVAAAAAgABgAAAC0AMQAAAAgAAAAAAAgA
-        AgAAAAAACAAQAAAATgBvAFMAYwBhAGwAZQAAAAgABAAAADAAAAAIAAQAAAAwAAAACAACAAAAAAAIAAAA
-        AAAIAAIAAAAAAA0AAAAAAAAAAAAAAAAAAAAAAAgABAAAADEAAAAIAAQAAAAwAAAACAAAAAAACAAEAAAA
-        MAAAAAgACAAAAGEAbABsAAAACAAMAAAAZgBhAGwAcwBlAAAACAAMAAAAZgBhAGwAcwBlAAAACAAGAAAA
-        LQAxAAAACAAMAAAAcwBjAGEAbABlAAAACw==
-</value>
-  </data>
   <metadata name="richTextBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="richTextBox1.Text" xml:space="preserve">
-    <value>Crow Pose
-Sanskrit name: Bakasana
-Benefits: Strengthens your arms, wrists, and abs; more of a challenge, but a great trick to pull out at parties
-How to: Get into downward facing dog position. Then walk your feet forward until your knees touch your arms. Carefully, bend your elbows and lift your heels off the floor. Rest your knees against the outside of your upper arms. 
-
-Mountain Pose
-Stand tall with feet together, shoulders relaxed, weight evenly distributed through your soles, arms at sides.
-Take a deep breath and raise your hands overhead, palms facing each other with arms straight. Reach up toward the sky with your fingertips.
-
-Tree
-Sanskrit name: Vriksasana
-Benefits: Improves your balance; strengthens your thighs, calves, ankles, and spine
-How to Take mountain pose. Then shift your weight onto your left leg. Keeping your hips facing forward, place the sole of your right foot inside your left thigh and find your balance. </value>
-  </data>
   <metadata name="button1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -163,4 +132,18 @@ How to Take mountain pose. Then shift your weight onto your left leg. Keeping yo
   <metadata name="button3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="axWindowsMediaPlayer1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="axWindowsMediaPlayer1.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAtwAAAAIB
+        AAAAAQAAAAAAAAAAAAAAAKIAAAAAAwAACAAAAAAABQAAAAAAAADwPwMAAAAAAAUAAAAAAAAAAAAIAAIA
+        AAAAAAMAAQAAAAsA//8DAAAAAAALAP//CAACAAAAAAADADIAAAALAAAACAAKAAAAZgB1AGwAbAAAAAsA
+        AAALAAAACwD//wsA//8LAAAACAACAAAAAAAIAAIAAAAAAAgAAgAAAAAACAACAAAAAAALAAAAwAcAAGEC
+        AAAL
+</value>
+  </data>
 </root>
