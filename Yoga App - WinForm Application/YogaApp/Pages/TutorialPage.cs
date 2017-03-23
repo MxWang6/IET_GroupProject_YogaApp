@@ -37,13 +37,13 @@ namespace YogaApp
             {
                 Console.WriteLine("Exception caught: {0}", e);
             }
-            videoPath = ExcelReader.getExcelFile("PoseData.xlsx", "TreePoseVideoPath");
-            videoDescription = ExcelReader.getExcelFile("PoseData.xlsx", "TreePoseVideoDescription");
-            richTextBox1.Text = videoDescription;
+            
         }
 
         private void playVideobutton_Click(object sender, EventArgs e)
         {
+            exchangeName = categoryList.getName().Name;
+            compareVideoPath(exchangeName);
             string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             path += videoPath;
             axWindowsMediaPlayer1.URL = path;
@@ -80,13 +80,38 @@ namespace YogaApp
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
+           
             exchangeName = categoryList.getName().Name;
-            if (exchangeName == "TreePose")
-            {
-                Console.WriteLine(ExcelReader.getExcelFile("PoseData.xlsx", "TreePoseVideoDescription"));
-                videoDescription = ExcelReader.getExcelFile("PoseData.xlsx", "TreePoseVideoDescription");
-            }
+            compareVideoDescription(exchangeName);
             richTextBox1.Text = videoDescription;
+        }
+
+        public string compareVideoPath(string ExchangeName)
+        {
+            if (ExchangeName == "TreePose")
+            {
+                videoPath = ExcelReader.getExcelFile("PoseData.xlsx", "TreePoseVideoPath");
+
+            }
+            else if(ExchangeName == "CatPose")
+            {
+                videoPath = ExcelReader.getExcelFile("PoseData.xlsx", "CatPoseVideoPose");
+            }
+            return videoPath;
+        }
+
+        public string compareVideoDescription(string ExchangeName)
+        {
+            if (ExchangeName == "TreePose")
+            {
+                videoDescription = ExcelReader.getExcelFile("PoseData.xlsx", "TreePoseVideoDescription");
+
+            }
+            else if (ExchangeName == "CatPose")
+            {
+                videoDescription = ExcelReader.getExcelFile("PoseData.xlsx", "CatPoseVideoDescription");
+            }
+            return videoDescription;
         }
     }
 }

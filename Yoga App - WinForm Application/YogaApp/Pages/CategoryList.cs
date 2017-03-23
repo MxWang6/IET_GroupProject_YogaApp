@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using YogaApp.Utils;
 
 
 namespace YogaApp
@@ -9,6 +10,7 @@ namespace YogaApp
     {
         TutorialPage tutorialPage;
         CategoryPage categoryPage;
+        public string videoDescription = null;
 
         private static Button exchangeButton;
         
@@ -46,7 +48,7 @@ namespace YogaApp
             var button = (Button)sender;
             String Name = button.Name;
             setName(Name);
-                       
+            tutorialPage.richTextBox1.Text = videoDescription;
             Console.WriteLine(getName()); 
 
         }
@@ -54,6 +56,12 @@ namespace YogaApp
         private void button2_Click(object sender, EventArgs e)
         {
             navigateToTutorialPage();
+            var button = (Button)sender;
+            String Name = button.Name;
+            setName(Name);
+            tutorialPage.richTextBox1.Text = videoDescription;
+            Console.WriteLine(getName());
+
         }
 
         private void button3_Click(object sender, EventArgs e)
