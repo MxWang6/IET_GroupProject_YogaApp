@@ -21,34 +21,34 @@ namespace YogaApp
         {
             InitializeComponent();
             categoryPage = cP;
-         
         }
 
         public TutorialPage(CategoryList cL)
         {
             InitializeComponent();
             categoryList = cL;
-     
+
+            // add video local path
+            try
+            {
+                exchangeName = categoryList.getName().Name;
+            }
+            catch (NullReferenceException e)
+            {
+                Console.WriteLine("Exception caught: {0}", e);
+            }
+            videoPath = ExcelReader.getExcelFile("PoseData.xlsx", "TreePoseVideoPath");
+            videoDescription = ExcelReader.getExcelFile("PoseData.xlsx", "TreePoseVideoDescription");
+            richTextBox1.Text = videoDescription;
         }
 
         private void playVideobutton_Click(object sender, EventArgs e)
         {
-         
-            // add video local path
-            exchangeName = categoryList.getName().Name;
-            if (exchangeName == "TreePose")
-            {
-                Console.WriteLine(ExcelReader.getExcelFile("PoseData.xlsx", "TreePoseVideoPath"));
-                videoPath = ExcelReader.getExcelFile("PoseData.xlsx", "TreePoseVideoPath");
-                videoDescription = ExcelReader.getExcelFile("PoseData.xlsx", "TreePoseVideoDescription");
-            }
             string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             path += videoPath;
             axWindowsMediaPlayer1.URL = path;
-            richTextBox1.Text = videoDescription;
 
             // add other post here
-
         }
 
 
@@ -69,7 +69,7 @@ namespace YogaApp
         private void tryPoseButton_Click(object sender, EventArgs e)
         {
             string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-            path = "\\..\\..\\YogaApp-Kinect-cpp\\SkeletonBasics-D2D\\Debug\\SkeletonBasics-D2D.exe";
+            path += "\\..\\..\\YogaApp-Kinect-cpp\\SkeletonBasics-D2D\\Debug\\SkeletonBasics-D2D.exe";
             Process.Start(path);
         }
 
@@ -86,7 +86,7 @@ namespace YogaApp
                 Console.WriteLine(ExcelReader.getExcelFile("PoseData.xlsx", "TreePoseVideoDescription"));
                 videoDescription = ExcelReader.getExcelFile("PoseData.xlsx", "TreePoseVideoDescription");
             }
-             richTextBox1.Text = videoDescription;
+            richTextBox1.Text = videoDescription;
         }
     }
 }
