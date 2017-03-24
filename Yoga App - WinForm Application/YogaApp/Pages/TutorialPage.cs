@@ -74,11 +74,6 @@ namespace YogaApp
             Process.Start(path);
         }
 
-        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
            
