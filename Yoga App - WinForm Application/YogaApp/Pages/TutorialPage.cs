@@ -43,7 +43,8 @@ namespace YogaApp
         private void playVideobutton_Click(object sender, EventArgs e)
         {
             exchangeName = categoryList.getName().Name;
-            compareVideoPath(exchangeName);
+            videoPath = compareVideoPath(exchangeName);
+            Console.WriteLine("saurabh" + videoPath);
             string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             path += videoPath;
             axWindowsMediaPlayer1.URL = path;
@@ -82,36 +83,18 @@ namespace YogaApp
         {
            
             exchangeName = categoryList.getName().Name;
-            compareVideoDescription(exchangeName);
+            videoDescription = compareVideoDescription(exchangeName);
             richTextBox1.Text = videoDescription;
         }
 
         public string compareVideoPath(string ExchangeName)
         {
-            if (ExchangeName == "TreePose")
-            {
-                videoPath = ExcelReader.getExcelFile("PoseData.xlsx", "TreePoseVideoPath");
-
-            }
-            else if(ExchangeName == "CatPose")
-            {
-                videoPath = ExcelReader.getExcelFile("PoseData.xlsx", "CatPoseVideoPose");
-            }
-            return videoPath;
+            return ExcelReader.getExcelFile("PoseData.xlsx", ExchangeName + "VideoPath");
         }
 
         public string compareVideoDescription(string ExchangeName)
         {
-            if (ExchangeName == "TreePose")
-            {
-                videoDescription = ExcelReader.getExcelFile("PoseData.xlsx", "TreePoseVideoDescription");
-
-            }
-            else if (ExchangeName == "CatPose")
-            {
-                videoDescription = ExcelReader.getExcelFile("PoseData.xlsx", "CatPoseVideoDescription");
-            }
-            return videoDescription;
+            return ExcelReader.getExcelFile("PoseData.xlsx", ExchangeName + "VideoDescription");
         }
     }
 }
