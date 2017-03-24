@@ -11,6 +11,7 @@ namespace YogaApp
         TutorialPage tutorialPage;
         CategoryPage categoryPage;
         public string videoDescription = null;
+        public string categoryName = null;
 
         private static Button exchangeButton;
         
@@ -31,12 +32,21 @@ namespace YogaApp
             categoryPage = cP;
             tutorialPage = new TutorialPage(this);
             exchangeButton = new Button();
+
+            try
+            {
+                categoryName = cP.getCategoryName().Name;
+            }
+            catch (NullReferenceException e)
+            {
+                Console.WriteLine("Exception caught: {0}", e);
+            }
             AddPosesToForm();
         }
 
         private void AddPosesToForm()
         {
-            string[] categories = ExcelReader.getExcelFile("PoseData.xlsx", "Beginner").Split(',');
+            string[] categories = ExcelReader.getExcelFile("PoseData.xlsx", categoryName).Split(',');
             for (int i = 0; i < categories.Length; i++)
             {
                 string[] categoryDetails = categories[i].Split(':');
@@ -68,7 +78,6 @@ namespace YogaApp
             string Name = button.Name;
             setName(Name);
             tutorialPage.richTextBox1.Text = videoDescription;
-            Console.WriteLine(getName()); 
 
         }
 

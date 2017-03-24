@@ -44,7 +44,6 @@ namespace YogaApp
         {
             exchangeName = categoryList.getName().Name;
             videoPath = compareVideoPath(exchangeName);
-            Console.WriteLine("saurabh" + videoPath);
             string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             path += videoPath;
             axWindowsMediaPlayer1.URL = path;
