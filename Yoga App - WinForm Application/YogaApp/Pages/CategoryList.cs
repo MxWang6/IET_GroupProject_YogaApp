@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using YogaApp.Utils;
 
 
 namespace YogaApp
@@ -9,6 +10,8 @@ namespace YogaApp
     {
         TutorialPage tutorialPage;
         CategoryPage categoryPage;
+        public string videoDescription = null;
+        public string categoryName = null;
 
         private static Button exchangeButton;
         
@@ -29,6 +32,34 @@ namespace YogaApp
             categoryPage = cP;
             tutorialPage = new TutorialPage(this);
             exchangeButton = new Button();
+
+            try
+            {
+                categoryName = cP.getCategoryName().Name;
+            }
+            catch (NullReferenceException e)
+            {
+                Console.WriteLine("Exception caught: {0}", e);
+            }
+            AddPosesToForm();
+        }
+
+        private void AddPosesToForm()
+        {
+            string[] categories = ExcelReader.getExcelFile("PoseData.xlsx", categoryName).Split(',');
+            for (int i = 0; i < categories.Length; i++)
+            {
+                string[] categoryDetails = categories[i].Split(':');
+                Button button = new Button();
+                button.Location = new Point(273, 19 + (58*i));
+                button.Size = new Size(160, 34);
+                button.TabIndex = 0;
+                button.UseVisualStyleBackColor = true;
+                button.Click += new EventHandler(button_Click);
+                button.Text = categoryDetails[0];
+                button.Name = categoryDetails[1];
+                groupBox1.Controls.Add(button);
+            }
         }
 
         private void navigateToTutorialPage()
@@ -40,20 +71,14 @@ namespace YogaApp
             
         }
 
-        private void buttonTree_Click(object sender, EventArgs e)
+        private void button_Click(object sender, EventArgs e)
         {
             navigateToTutorialPage();
             var button = (Button)sender;
-            String Name = button.Name;
+            string Name = button.Name;
             setName(Name);
-                       
-            Console.WriteLine(getName()); 
+            tutorialPage.richTextBox1.Text = videoDescription;
 
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            navigateToTutorialPage();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -62,11 +87,6 @@ namespace YogaApp
                           (Screen.PrimaryScreen.WorkingArea.Height - categoryPage.Height) / 2);
             this.Hide();
             categoryPage.Show();
-        }
-
-        private void CategoryList_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

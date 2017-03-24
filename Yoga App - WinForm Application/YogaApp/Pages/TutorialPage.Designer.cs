@@ -121,7 +121,6 @@
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(534, 510);
             this.axWindowsMediaPlayer1.TabIndex = 0;
-            this.axWindowsMediaPlayer1.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
             // 
             // TutorialPage
             // 
@@ -147,8 +146,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label1;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+        public System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
