@@ -59,7 +59,7 @@ namespace YogaApp
                          (Screen.PrimaryScreen.WorkingArea.Height - categoryList.Height) / 2);
             categoryList.Show();
             axWindowsMediaPlayer1.close();
-            foreach (var process in Process.GetProcessesByName("SkeletonBasics-D2D"))
+            foreach (var process in Process.GetProcessesByName("KinectExplorer-D2D"))
             {
                 Console.WriteLine(process.ToString());
                 process.Kill();
@@ -69,7 +69,7 @@ namespace YogaApp
         private void tryPoseButton_Click(object sender, EventArgs e)
         {
             string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-            path += "\\..\\..\\YogaApp-Kinect-cpp\\SkeletonBasics-D2D\\Debug\\SkeletonBasics-D2D.exe";
+            path += "\\..\\..\\KinectExplorer-D2D\\Debug\\KinectExplorer-D2D.exe";
             Process.Start(path);
         }
 
