@@ -159,6 +159,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="Angles.csv" />
     <None Include="app.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -167,7 +168,7 @@
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SkeletonBasics.cpp" />
+    <ClCompile Include="skeletonBasics2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SkeletonBasics.rc" />

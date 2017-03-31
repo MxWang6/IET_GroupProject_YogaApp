@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 // <copyright file="SkeletonBasics.cpp" company="Microsoft">
 //     Copyright (c) Microsoft Corporation.  All rights reserved.
 // </copyright>
@@ -22,6 +22,13 @@ static const float g_InferredBoneThickness = 1.0f;
 #define PI 3.14159265
 
 using namespace std;
+
+
+ifstream in("Angles.csv");
+	string line, field;
+	vector<string> v;                // array of values for one line only
+
+	
 
 /// <summary>
 /// Entry point for the application
@@ -86,7 +93,24 @@ CSkeletonBasics::~CSkeletonBasics()
 /// <param name="nCmdShow">whether to display minimized, maximized, or normally</param>
 int CSkeletonBasics::Run(HINSTANCE hInstance, int nCmdShow)
 {
-    MSG       msg = {0};
+	///////////////////////////////////////////////////////////////////////////////////////////////NEW CODE
+    while (getline(in, line))    // get next line in file
+	{
+		v.clear();
+		stringstream ss(line);
+
+		while (getline(ss, field, ','))  // break line into comma delimitted fields
+		{
+			v.push_back(field);  // add each field to the 1D array
+		}
+	}
+	////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	
+	
+	
+	
+	MSG       msg = {0};
     WNDCLASS  wc  = {0};
 
     // Dialog custom window class
@@ -402,32 +426,34 @@ void CSkeletonBasics::DrawSkeleton(const NUI_SKELETON_DATA & skel, int windowWid
     DrawBone(skel, NUI_SKELETON_POSITION_ELBOW_LEFT, NUI_SKELETON_POSITION_WRIST_LEFT);
     DrawBone(skel, NUI_SKELETON_POSITION_WRIST_LEFT, NUI_SKELETON_POSITION_HAND_LEFT);
 
-	BoneAngle(skel, NUI_SKELETON_POSITION_SHOULDER_LEFT, NUI_SKELETON_POSITION_ELBOW_LEFT, 53.0);
-	BoneAngle(skel, NUI_SKELETON_POSITION_ELBOW_LEFT, NUI_SKELETON_POSITION_WRIST_LEFT, -50.0);
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////NEW CODE
+	BoneAngle(skel, NUI_SKELETON_POSITION_SHOULDER_LEFT, NUI_SKELETON_POSITION_ELBOW_LEFT, stof(v[0]));
+	BoneAngle(skel, NUI_SKELETON_POSITION_ELBOW_LEFT, NUI_SKELETON_POSITION_WRIST_LEFT, stof(v[1]));
 
     // Right Arm
     DrawBone(skel, NUI_SKELETON_POSITION_SHOULDER_RIGHT, NUI_SKELETON_POSITION_ELBOW_RIGHT);
     DrawBone(skel, NUI_SKELETON_POSITION_ELBOW_RIGHT, NUI_SKELETON_POSITION_WRIST_RIGHT);
     DrawBone(skel, NUI_SKELETON_POSITION_WRIST_RIGHT, NUI_SKELETON_POSITION_HAND_RIGHT);
 
-	BoneAngle(skel, NUI_SKELETON_POSITION_SHOULDER_RIGHT, NUI_SKELETON_POSITION_ELBOW_RIGHT, -53.0);
-	BoneAngle(skel, NUI_SKELETON_POSITION_ELBOW_RIGHT, NUI_SKELETON_POSITION_WRIST_RIGHT, 50.0);
+	BoneAngle(skel, NUI_SKELETON_POSITION_SHOULDER_RIGHT, NUI_SKELETON_POSITION_ELBOW_RIGHT, stof(v[2]));
+	BoneAngle(skel, NUI_SKELETON_POSITION_ELBOW_RIGHT, NUI_SKELETON_POSITION_WRIST_RIGHT, stof(v[3]));
 
     // Left Leg
     DrawBone(skel, NUI_SKELETON_POSITION_HIP_LEFT, NUI_SKELETON_POSITION_KNEE_LEFT);
     DrawBone(skel, NUI_SKELETON_POSITION_KNEE_LEFT, NUI_SKELETON_POSITION_ANKLE_LEFT);
     DrawBone(skel, NUI_SKELETON_POSITION_ANKLE_LEFT, NUI_SKELETON_POSITION_FOOT_LEFT);
 
-	BoneAngle(skel, NUI_SKELETON_POSITION_HIP_LEFT, NUI_SKELETON_POSITION_KNEE_LEFT, -50.0);
-	BoneAngle(skel, NUI_SKELETON_POSITION_KNEE_LEFT, NUI_SKELETON_POSITION_ANKLE_LEFT, 50.0);
+	BoneAngle(skel, NUI_SKELETON_POSITION_HIP_LEFT, NUI_SKELETON_POSITION_KNEE_LEFT, stof(v[4]));
+	BoneAngle(skel, NUI_SKELETON_POSITION_KNEE_LEFT, NUI_SKELETON_POSITION_ANKLE_LEFT, stof(v[5]));
 
     // Right Leg
     DrawBone(skel, NUI_SKELETON_POSITION_HIP_RIGHT, NUI_SKELETON_POSITION_KNEE_RIGHT);
     DrawBone(skel, NUI_SKELETON_POSITION_KNEE_RIGHT, NUI_SKELETON_POSITION_ANKLE_RIGHT);
     DrawBone(skel, NUI_SKELETON_POSITION_ANKLE_RIGHT, NUI_SKELETON_POSITION_FOOT_RIGHT);
 
-	BoneAngle(skel, NUI_SKELETON_POSITION_HIP_RIGHT, NUI_SKELETON_POSITION_KNEE_RIGHT, 90.0);
-	BoneAngle(skel, NUI_SKELETON_POSITION_KNEE_RIGHT, NUI_SKELETON_POSITION_ANKLE_RIGHT, 90.0);
+	BoneAngle(skel, NUI_SKELETON_POSITION_HIP_RIGHT, NUI_SKELETON_POSITION_KNEE_RIGHT, stof(v[6]));
+	BoneAngle(skel, NUI_SKELETON_POSITION_KNEE_RIGHT, NUI_SKELETON_POSITION_ANKLE_RIGHT, stof(v[7]));
 
     // Draw the joints in a different color
     for (i = 0; i < NUI_SKELETON_POSITION_COUNT; ++i)
