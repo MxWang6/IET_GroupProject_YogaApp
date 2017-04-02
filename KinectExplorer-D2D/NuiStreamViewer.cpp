@@ -79,7 +79,7 @@ NuiStreamViewer::NuiStreamViewer(const NuiViewer* pParent)
 {
     m_pImageRenderer = new ImageRenderer();
     m_lastTick = GetTickCount();
-
+	/*
 	///////////////////////////////////////////////////////////////////////////////////////////////NEW CODE
 	while (getline(in, line))    // get next line in file
 	{
@@ -91,7 +91,17 @@ NuiStreamViewer::NuiStreamViewer(const NuiViewer* pParent)
 			v.push_back(field);  // add each field to the 1D array
 		}
 	}
-	////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+	v.push_back("-53");
+	v.push_back("50");
+	v.push_back("53");
+	v.push_back("-50");
+	v.push_back("50");
+	v.push_back("-50");
+	v.push_back("-83");
+	v.push_back("-83");
+	v.push_back("-53");
+
 
 	for (int i = 0; i < 8; i++) {
 		bn.push_back(false);
@@ -380,7 +390,7 @@ void NuiStreamViewer::BoneAngle(const NUI_SKELETON_DATA &skel, NUI_SKELETON_POSI
 	if (bone> 3)
 		tol = 15.0;
 	else
-		tol = 10.0;
+		tol = 15.0;
 	float target = stof(v[bone]);
 	if (angle<(target + tol) && angle>(target - tol))
 	{
@@ -653,7 +663,7 @@ bool NuiStreamViewer::IsOutOfImageRect(const D2D1_POINT_2F& point, const D2D1_RE
 /// <param name="client">Client area of viewer's window</param>
 D2D1_RECT_F NuiStreamViewer::GetImageRect(const RECT &client)
 {
-	if (bn[0] && bn[1])//&&bn[2]&&bn[3]&&bn[4]&&bn[5]&&bn[6]&&bn[7])
+	if (bn[0] && bn[1]&&bn[2]&&bn[3]&&bn[4]&&bn[5])//&&bn[6]&&bn[7])
 	{
 		if (timerRunning)
 		{
