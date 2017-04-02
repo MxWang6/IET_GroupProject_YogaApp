@@ -24,5 +24,15 @@ namespace YogaApp.Views
         {
             InitializeComponent();
         }
+
+        private void BowPose_OnClick(object sender, RoutedEventArgs e)
+        {
+            Navigation.Navigation.Navigate(new VideoIntro("BowPose"));
+        }
+
+        private void BridgePose_OnClick(object sender, RoutedEventArgs e)
+        {
+            Navigation.Navigation.Navigate(new VideoIntro("BridgePose"));
+        }
     }
 }

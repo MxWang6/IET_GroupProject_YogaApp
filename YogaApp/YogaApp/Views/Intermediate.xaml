@@ -13,6 +13,17 @@
       Title="Intermediate">
 
     <Grid Background="{DynamicResource AccentColorBrush4}">
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <WrapPanel Grid.Row="0" Grid.Column="0" Width="312" VerticalAlignment="Center">
+            <controls:Tile Name="BowPose" Title="Bow Pose" TiltFactor="2" Width="150" Height="100" HorizontalTitleAlignment="Left" VerticalTitleAlignment="Top" Click="BowPose_OnClick"></controls:Tile>
+            <controls:Tile Name="BridgePose" Title="Bridge Pose" TiltFactor="2" Width="150" Height="100" HorizontalTitleAlignment="Left" VerticalTitleAlignment="Top" Click="BridgePose_OnClick"></controls:Tile>
+        </WrapPanel>
     </Grid>
 </Page>

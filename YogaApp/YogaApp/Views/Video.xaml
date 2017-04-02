@@ -15,17 +15,17 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <controls:MetroAnimatedSingleRowTabControl>
+        <!--<controls:MetroAnimatedSingleRowTabControl>
             <TabItem Header="Introduction">
                 <TextBlock Text="abcdfdadsdsa"></TextBlock>
             </TabItem>
             <TabItem Header="Video">
-                <cef:CefYoutubeController Name="Player" VideoId="B759dzymyoc"/>
+                --><!--<cef:CefYoutubeController Name="Player" VideoId="B759dzymyoc"/>--><!--
             </TabItem>
             <TabItem Header="Play">
                 <TextBlock Text="Kinect"></TextBlock>
             </TabItem>
-        </controls:MetroAnimatedSingleRowTabControl>
-        <!--<cef:CefYoutubeController Name="Player" VideoId="B759dzymyoc"/>-->
+        </controls:MetroAnimatedSingleRowTabControl>-->
+        <cef:CefYoutubeController Name="Player" VideoId="B759dzymyoc"/>
     </Grid>
 </Page>

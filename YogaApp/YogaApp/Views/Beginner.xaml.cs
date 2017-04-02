@@ -23,16 +23,19 @@ namespace YogaApp.Views
         public Beginner()
         {
             InitializeComponent();
+            //var name = value;
         }
 
-        private void Tile1_OnClick(object sender, RoutedEventArgs e)
+        private void TreePose_OnClick(object sender, RoutedEventArgs e)
         {
-            Navigation.Navigation.Navigate(new Uri("Views/Video.xaml", UriKind.RelativeOrAbsolute));
+            //Navigation.Navigation.Navigate(new Uri("Views/Video.xaml", UriKind.RelativeOrAbsolute));
+            Navigation.Navigation.Navigate(new VideoIntro("TreePose"));
         }
 
-        private void Tile2_OnClick(object sender, RoutedEventArgs e)
+        private void CatPose_OnClick(object sender, RoutedEventArgs e)
         {
-            Navigation.Navigation.Navigate(new Uri("Views/Video.xaml", UriKind.RelativeOrAbsolute));
+            //Navigation.Navigation.Navigate(new Uri("Views/Video.xaml", UriKind.RelativeOrAbsolute));
+            Navigation.Navigation.Navigate(new VideoIntro("CatPose"));
         }
     }
 }

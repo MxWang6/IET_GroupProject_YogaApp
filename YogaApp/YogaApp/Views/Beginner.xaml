@@ -30,8 +30,8 @@
         </Grid.RowDefinitions>
 
         <WrapPanel Grid.Row="0" Grid.Column="0" Width="312" VerticalAlignment="Center">
-            <controls:Tile Name="Tile1" Title="Bharadwaj Aasan" TiltFactor="2" Width="150" Height="100" HorizontalTitleAlignment="Left" VerticalTitleAlignment="Top" Click="Tile1_OnClick"></controls:Tile>
-            <controls:Tile Name="Tile2" Title="TreePose" TiltFactor="2" Width="150" Height="100" HorizontalTitleAlignment="Left" VerticalTitleAlignment="Top" Click="Tile2_OnClick"></controls:Tile>
+            <controls:Tile Name="TreePose" Title="Tree Pose" TiltFactor="2" Width="150" Height="100" HorizontalTitleAlignment="Left" VerticalTitleAlignment="Top" Click="TreePose_OnClick"></controls:Tile>
+            <controls:Tile Name="CatPose" Title="Cat Pose" TiltFactor="2" Width="150" Height="100" HorizontalTitleAlignment="Left" VerticalTitleAlignment="Top" Click="CatPose_OnClick"></controls:Tile>
         </WrapPanel>
         
     </Grid>

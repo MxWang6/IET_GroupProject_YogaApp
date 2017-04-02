@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using YogaApp.Utils;
 
 namespace YogaApp.Views
 {
@@ -23,11 +24,13 @@ namespace YogaApp.Views
         public MainPage()
         {
             InitializeComponent();
+            CsvWriter.addPoseNameToCsv("Tree Pose");
         }
 
         private void Beginner_Click(object sender, RoutedEventArgs e)
         {
             Navigation.Navigation.Navigate(new Uri("Views/Beginner.xaml", UriKind.RelativeOrAbsolute));
+            //Navigation.Navigation.Navigate(new Beginner("beginner"));
         }
 
         private void Intermediate_Click(object sender, RoutedEventArgs e)

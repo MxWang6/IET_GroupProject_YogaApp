@@ -1,0 +1,74 @@
+﻿<Page x:Class="YogaApp.Views.VideoIntro"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      xmlns:local="clr-namespace:YogaApp.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="300"
+      d:DesignWidth="300"
+      Foreground="{DynamicResource TextBrush}"
+      Title="VideoIntro">
+
+    <Grid Background="{DynamicResource AccentColorBrush4}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0">
+            <controls:MetroAnimatedSingleRowTabControl>
+                <TabItem Header="Intro">
+                    <TextBlock Name="Intro"></TextBlock>
+                </TabItem>
+                <TabItem Header="Steps">
+                    <TextBlock Name="Steps"></TextBlock>
+                </TabItem>
+                <TabItem Header="Tips">
+                    <TextBlock Name="Tips"></TextBlock>
+                </TabItem>
+            </controls:MetroAnimatedSingleRowTabControl>
+        </Grid>
+        
+        <Grid Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <WrapPanel Grid.Column="0" HorizontalAlignment="Center">
+                <Label Content="Play Video"></Label>
+            </WrapPanel>
+            
+            <WrapPanel Grid.Column="1" HorizontalAlignment="Center">
+                <Label Content="Try Pose"></Label>
+            </WrapPanel>
+            
+        </Grid>
+        
+        <Grid Grid.Row="2">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <WrapPanel Grid.Column="0" HorizontalAlignment="Center" Margin="5">
+                <Button Name="VideoPlay" Grid.Column="0" Style="{DynamicResource AccentedSquareButtonStyle}" Content="{iconPacks:PackIconModern Film, Width=46}" Click="VideoPlay_Click"></Button>
+            </WrapPanel>
+
+            <WrapPanel Grid.Column="1" HorizontalAlignment="Center" Margin="5">
+                <Button Name="Kinect" Grid.Column="1" Style="{DynamicResource AccentedSquareButtonStyle}" Content="{iconPacks:PackIconModern Xbox, Width=46}" Click="Kinect_Click"></Button>
+            </WrapPanel>
+
+        </Grid>
+
+
+        
+    </Grid>
+</Page>

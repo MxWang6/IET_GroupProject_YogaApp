@@ -13,6 +13,15 @@
       Title="Expert">
 
     <Grid Background="{DynamicResource AccentColorBrush4}">
-        
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <WrapPanel Grid.Row="0" Grid.Column="0" Width="312" VerticalAlignment="Center">
+            <controls:Tile Name="CowPose" Title="Cow Pose" TiltFactor="2" Width="150" Height="100" HorizontalTitleAlignment="Left" VerticalTitleAlignment="Top" Click="CowPose_OnClick"></controls:Tile>
+            <controls:Tile Name="TrianglePose" Title="Triangle Pose" TiltFactor="2" Width="150" Height="100" HorizontalTitleAlignment="Left" VerticalTitleAlignment="Top" Click="TrianglePose_OnClick"></controls:Tile>
+        </WrapPanel>
+
     </Grid>
 </Page>

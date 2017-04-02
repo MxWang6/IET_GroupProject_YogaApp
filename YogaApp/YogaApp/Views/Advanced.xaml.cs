@@ -24,5 +24,15 @@ namespace YogaApp.Views
         {
             InitializeComponent();
         }
+
+        private void CamelPose_OnClick(object sender, RoutedEventArgs e)
+        {
+            Navigation.Navigation.Navigate(new VideoIntro("CamelPose"));
+        }
+
+        private void ChairPose_OnClick(object sender, RoutedEventArgs e)
+        {
+            Navigation.Navigation.Navigate(new VideoIntro("ChairPose"));
+        }
     }
 }

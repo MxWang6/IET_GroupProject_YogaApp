@@ -13,6 +13,13 @@
       Title="Advanced">
 
     <Grid Background="{DynamicResource AccentColorBrush4}">
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <WrapPanel Grid.Row="0" Grid.Column="0" Width="312" VerticalAlignment="Center">
+            <controls:Tile Name="CamelPose" Title="Camel Pose" TiltFactor="2" Width="150" Height="100" HorizontalTitleAlignment="Left" VerticalTitleAlignment="Top" Click="CamelPose_OnClick"></controls:Tile>
+            <controls:Tile Name="ChairPose" Title="Chair Pose" TiltFactor="2" Width="150" Height="100" HorizontalTitleAlignment="Left" VerticalTitleAlignment="Top" Click="ChairPose_OnClick"></controls:Tile>
+        </WrapPanel>
     </Grid>
 </Page>
