@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using YogaApp.Utils;
+using YoutubePlayerLib.Cef;
 
 namespace YogaApp.Views
 {
@@ -20,9 +22,23 @@ namespace YogaApp.Views
     /// </summary>
     public partial class Video : Page
     {
-        public Video()
+        private string name;
+        public Video(string value)
         {
             InitializeComponent();
+            name = value;
+            SetPlayer(name);
+        }
+
+        private void SetPlayer(string name)
+        {
+            Player.VideoId = GetVideoID(name);
+        }
+
+        private string GetVideoID(string name)
+        {
+            string id = ExcelReader.getExcelFile("PoseData.xlsx", name + "OnlineID");
+            return id;
         }
     }
 }

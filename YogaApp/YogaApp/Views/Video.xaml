@@ -26,6 +26,6 @@
                 <TextBlock Text="Kinect"></TextBlock>
             </TabItem>
         </controls:MetroAnimatedSingleRowTabControl>-->
-        <cef:CefYoutubeController Name="Player" VideoId="B759dzymyoc"/>
+        <cef:CefYoutubeController Name="Player"/>
     </Grid>
 </Page>

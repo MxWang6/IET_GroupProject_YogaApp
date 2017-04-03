@@ -23,11 +23,13 @@ namespace YogaApp.Views
     /// </summary>
     public partial class VideoIntro : Page
     {
+        private string name;
+        //private string YoutubeID;
 
         public VideoIntro(string value)
         {
             InitializeComponent();
-            var name = value;
+            name = value;
             Intro.Text = getIntro(name);
             Steps.Text = getSteps(name);
             Tips.Text = getTips(name);
@@ -48,9 +50,16 @@ namespace YogaApp.Views
             return ExcelReader.getExcelFile("PoseData.xlsx", name + "Tips");
         }
 
+        //private void Get_YoutubeID(string name)
+        //{
+        //    YoutubeID = ExcelReader.getExcelFile("PoseData.xlsx", name + "OnlineID");
+        //    var temp = youtubeId;
+        //}
+
         private void VideoPlay_Click(object sender, RoutedEventArgs e)
         {
-            Navigation.Navigation.Navigate(new Uri("Views/Video.xaml", UriKind.RelativeOrAbsolute));
+            //Navigation.Navigation.Navigate(new Uri("Views/Video.xaml", UriKind.RelativeOrAbsolute));
+            Navigation.Navigation.Navigate(new Video(name));
         }
 
         private void Kinect_Click(object sender, RoutedEventArgs e)
@@ -63,5 +72,7 @@ namespace YogaApp.Views
             path += "\\..\\..\\YogaApp-Kinect-cpp\\SkeletonBasics-D2D\\Debug\\SkeletonBasics-D2D.exe";
             Process.Start(path);
         }
+
+
     }
 }
