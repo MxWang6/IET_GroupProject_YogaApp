@@ -69,7 +69,8 @@ namespace YogaApp.Views
             string path =
                 Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName).FullName;
 
-            path = "\\..\\..\\YogaApp-Kinect-cpp\\SkeletonBasics-D2D\\Debug\\SkeletonBasics-D2D.exe";
+            path += "\\..\\..\\KinectExplorer-D2D\\Debug\\KinectExplorer-D2D.exe";
+            Console.WriteLine("saurabh" + path);
             Process.Start(path);
         }
 
