@@ -23,13 +23,13 @@
         <Grid Grid.Row="0">
             <controls:MetroAnimatedSingleRowTabControl>
                 <TabItem Header="Intro">
-                    <TextBlock Name="Intro"></TextBlock>
+                    <TextBlock Name="Intro" TextWrapping="Wrap"/>
                 </TabItem>
                 <TabItem Header="Steps">
-                    <TextBlock Name="Steps"></TextBlock>
+                    <TextBlock Name="Steps" TextWrapping="Wrap"></TextBlock>
                 </TabItem>
                 <TabItem Header="Tips">
-                    <TextBlock Name="Tips"></TextBlock>
+                    <TextBlock Name="Tips" TextWrapping="Wrap"/>
                 </TabItem>
             </controls:MetroAnimatedSingleRowTabControl>
         </Grid>
