@@ -23,10 +23,12 @@
         <Grid Grid.Row="0">
             <controls:MetroAnimatedSingleRowTabControl>
                 <TabItem Header="Intro">
-                    <TextBlock Name="Intro" TextWrapping="Wrap"/>
+                    <TextBlock Name="Intro" TextWrapping="Wrap" ScrollViewer.CanContentScroll="True"/>
                 </TabItem>
                 <TabItem Header="Steps">
-                    <TextBlock Name="Steps" TextWrapping="Wrap"></TextBlock>
+                    <ScrollViewer>
+                    <TextBlock Name="Steps" TextWrapping="Wrap" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"></TextBlock>
+                    </ScrollViewer>
                 </TabItem>
                 <TabItem Header="Tips">
                     <TextBlock Name="Tips" TextWrapping="Wrap"/>
