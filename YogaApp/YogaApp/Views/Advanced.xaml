@@ -1,0 +1,25 @@
+﻿<Page x:Class="YogaApp.Views.Advanced"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      xmlns:local="clr-namespace:YogaApp.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" 
+      d:DesignWidth="425"
+      Foreground="{DynamicResource TextBrush}"
+      Title="Advanced">
+
+    <Grid Background="{DynamicResource AccentColorBrush4}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <WrapPanel Grid.Row="0" Grid.Column="0" Width="312" VerticalAlignment="Center">
+            <controls:Tile Name="CamelPose" Title="Camel Pose" TiltFactor="2" Width="150" Height="100" HorizontalTitleAlignment="Left" VerticalTitleAlignment="Top" Click="CamelPose_OnClick"></controls:Tile>
+            <controls:Tile Name="ChairPose" Title="Chair Pose" TiltFactor="2" Width="150" Height="100" HorizontalTitleAlignment="Left" VerticalTitleAlignment="Top" Click="ChairPose_OnClick"></controls:Tile>
+        </WrapPanel>
+    </Grid>
+</Page>

@@ -10,6 +10,8 @@ namespace YogaApp
 {
     public partial class TutorialPage : Form
     {
+        delegate void SetAppCloseCallback(Button btn);
+
         CategoryPage categoryPage;
         CategoryList categoryList;
         public string exchangeName = null;
@@ -70,7 +72,30 @@ namespace YogaApp
         {
             string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             path += "\\..\\..\\KinectExplorer-D2D\\Debug\\KinectExplorer-D2D.exe";
-            Process.Start(path);
+            //Process.Start(path);
+
+            Process cppApp = new Process();
+            cppApp.Exited += new EventHandler(cppApp_Exited);
+            cppApp.StartInfo.FileName = path;
+            cppApp.EnableRaisingEvents = true;
+            cppApp.Start();
+        }
+
+        void cppApp_Exited(object sender, EventArgs e)
+        {
+            clickBackButton(button4);
+        }
+
+        void clickBackButton(Button btn)
+        {
+            if (button4.InvokeRequired)
+            {
+                SetAppCloseCallback d = new SetAppCloseCallback(clickBackButton);
+                Invoke(d, new object[] { btn });
+            } else
+            {
+                btn.PerformClick();
+            }
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
