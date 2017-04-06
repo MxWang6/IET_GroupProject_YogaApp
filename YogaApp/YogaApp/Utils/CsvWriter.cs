@@ -12,7 +12,8 @@ namespace YogaApp.Utils
         public static void addPoseNameToCsv(string poseName)
         {
             string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-            path += "\\Files\\PoseSelected.csv";
+            path += "\\..\\Files\\PoseSelected.csv";
+            Console.WriteLine(path);
 
             if (File.Exists(path))
             {
