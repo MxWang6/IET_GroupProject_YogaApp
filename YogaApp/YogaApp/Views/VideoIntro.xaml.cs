@@ -66,6 +66,8 @@ namespace YogaApp.Views
         {
             //string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
 
+            CsvWriter.addPoseNameToCsv(name);
+
             string path =
                 Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName).FullName;
 

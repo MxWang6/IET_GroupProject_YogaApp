@@ -24,7 +24,6 @@ namespace YogaApp.Views
         public MainPage()
         {
             InitializeComponent();
-            CsvWriter.addPoseNameToCsv("Tree Pose");
         }
 
         private void Beginner_Click(object sender, RoutedEventArgs e)
